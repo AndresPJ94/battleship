@@ -1,6 +1,6 @@
 import numpy as np
 import random
-from funciones import *
+from tablero import *
 
 #Importamos numpy, random y las funciones de funciones.py
 lista_posiciones = [] # constante que va en el main, vamos recorriendo todas las posibles coordenadas
@@ -55,7 +55,7 @@ while '1' in tablero_jugador or '1' in tablero_maquina:  #Mientras haya 1's en a
     tablero_jugador
     tablero_maquina
     
-    fila = int(input('Introduzca una coordenada para la fila dentro del rango 0 a 9.'))
+    fila = int(input('Introduzca una coordenada para la fila dentro del rango 0 a 9: '))
     col = int(input('Introduzca una coordenada para la columna dentro del rango 0 a 9: '))
 
     #Funcion disparo para usuario y máquina. Por defecto siempre empieza el usuario pero se puede randomizar quien realiza el primer mov.
@@ -64,10 +64,10 @@ while '1' in tablero_jugador or '1' in tablero_maquina:  #Mientras haya 1's en a
  #Aquí el bucle while se rompe si alguno de los dos tableros (usuario y máquina) se queda sin barcos (1)
     if '1' not in tablero_jugador or '1' not in tablero_maquina:
         print('El juego ha terminado.')
-        if '1' not in tablero_jugador:
+        if '1' not in tablero_jugador:   #Si ya no quedan 1 en nuestro tablero, gana la máquina.
             print('La máquina te ha ganado. All your bases are belong to us.')
             break
-        else:
+        else:    #Si ya no le quedan 1 a la máquina, hemos ganado.
             print('Enhorabuena, has ganado a Skynet.')
             break
 
